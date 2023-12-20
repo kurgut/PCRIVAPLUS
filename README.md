@@ -12,9 +12,9 @@ ASET Consolidated Props and Avionics
 RasterPropMonitor
 
 Optional and recommended :
-MirageProps (WIP) :	adds props to allow maneuver creation from IVA
-NearfutureProps: 	adds decorative elemetents
-TDProps : 			A few more decorative elements		
+MirageProps (WIP) : adds props to allow maneuver creation from IVA
+NearfutureProps: adds decorative elemetents
+TDProps : A few more decorative elements		
 
 - Known issues :
 ASET FDAI GUID MOD (navball vector selector) has sometime the animation not showing ingame, but the prop still works. Save/reload can fix.
