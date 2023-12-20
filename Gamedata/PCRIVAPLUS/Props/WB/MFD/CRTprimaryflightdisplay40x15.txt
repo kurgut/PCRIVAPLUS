@@ -1,0 +1,15 @@
+﻿
+
+
+
+
+
+
+ {0:0000} m/s                       {1:00000} m $&$ EASPEED RADARALTOCEAN
+
+  
+
+
+
+
+              {0,6:000.0}° $&$ HEADING

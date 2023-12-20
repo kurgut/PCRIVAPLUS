@@ -1,0 +1,13 @@
+
+
+
+           [#00FF00FF]««««««««««««««««««[@x-288][#00FF00FF]{0}   $&$ STOREDSTRING_2
+[#00FF00FF]               {0} $&$ STOREDSTRING_0
+ 
+{1} {0} $&$ STOREDSTRING_1 STOREDSTRING_7
+			  
+    Powered by  JSI RasterPropMonitor			  
+[#00FF00FF]                v {0} $&$ RPMVERSION
+
+[#00FF00FF]            FLIGHT  ENGINEER
+ 
