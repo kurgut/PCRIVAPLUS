@@ -1,0 +1,2547 @@
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_MAPSCROLL_LR
+	
+	    defaultValue = 0
+
+	VARIABLE_DEFINITION
+    {
+        name = PERSISTENT_MAPSCROLL_LEFT
+        range = 0.5,1.5
+
+        value = -1
+    }
+	VARIABLE_DEFINITION
+    {
+        name = PERSISTENT_MAPSCROLL_RIGHT
+        range = 0.5,1.5
+
+        value = 1
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_MAPSCROLL_UD
+	
+	    defaultValue = 0
+
+	VARIABLE_DEFINITION
+    {
+        name = PERSISTENT_MAPSCROLL_DOWN
+        range = 0.5,1.5
+
+        value = -1
+    }
+	VARIABLE_DEFINITION
+    {
+        name = PERSISTENT_MAPSCROLL_UP
+        range = 0.5,1.5
+
+        value = 1
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_SquadIntLights
+	
+	    defaultValue = PERSISTENT_SquadIntLights
+
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_Cam_Gain_Docking
+	
+	    defaultValue = PERSISTENT_Warbird_Cam_Gain_Docking
+
+	VARIABLE_DEFINITION
+    {
+        name = PERSISTENT_Warbird_Cam_Gain_Docking
+        range = -0.5, 0.5
+
+        value = 0.5
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_LIQUIDFUELSTAGETIME
+	
+	    defaultValue = MATH_ASET_EST_REM_TIME_OF_FLIGHT_SEC
+
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_ANGLEOFATTACK
+	
+	    defaultValue = ANGLEOFATTACK
+
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+	VARIABLE_DEFINITION
+	{
+		name = IASPEED
+		range = -5,5
+		
+		value = 0
+	}
+}
+
+RPM_CUSTOM_VARIABLE
+
+	{
+	  name = WARBIRD_BACKLIGHT_ON
+	  operator = AND
+
+	  SOURCE_VARIABLE
+	  {
+		name = PERSISTENT_BackLight
+		range = 0.1, 1.1
+	  }
+	  
+	  SOURCE_VARIABLE
+	  {
+		name = CUSTOM_WARBIRD_ELECTRICAL_OFF
+		range = -0.1, 0.1
+	  }
+
+	}
+	
+RPM_CUSTOM_VARIABLE
+
+	{
+	  name = WARBIRD_CURRENTALTHOLD_ON
+	  operator = AND
+
+	  SOURCE_VARIABLE
+	  {
+		name = VERTSPEED
+		range = 0.5, 0.5
+	  }
+	  
+	  SOURCE_VARIABLE
+	  {
+		name = CUSTOM_WARBIRD_ALTHOLD_ON
+		range = 0.5, 1.5
+	  }
+
+	}
+
+RPM_MATH_VARIABLE
+{
+   name = WARBIRD_VERTSPEED_LOG10_SUBTRACTED
+   operator = SUBTRACT
+
+   sourceVariable = VERTSPEEDLOG10
+   sourceVariable = 1
+}
+
+RPM_MATH_VARIABLE
+{
+   name = WARBIRD_VERTSPEED_LOG10_ADDED
+   operator = ADD
+
+   sourceVariable = VERTSPEEDLOG10
+   sourceVariable = 1
+}
+
+RPM_MATH_VARIABLE
+{
+   name = VERTSPEED_DIV10
+   operator = DIVIDE
+
+   sourceVariable = VERTSPEED
+   sourceVariable = 10
+}
+
+RPM_MATH_VARIABLE
+{
+   name = VERTSPEED_FPM_MULT10
+   operator = MULTIPLY
+
+   sourceVariable = MATH_VERTSPEED_FPM
+   sourceVariable = 10
+}
+
+RPM_MATH_VARIABLE
+{
+   name = VERTSPEED_FPM_DIV1000
+   operator = DIVIDE
+
+   sourceVariable = MATH_VERTSPEED_FPM
+   sourceVariable = 1000
+}
+
+RPM_MATH_VARIABLE
+{
+   name = VERTSPEED_FPM_DIV10000
+   operator = DIVIDE
+
+   sourceVariable = MATH_VERTSPEED_FPM
+   sourceVariable = 10000
+}
+
+RPM_MATH_VARIABLE
+{
+   name = VERTSPEED_FPM_DIV100000
+   operator = DIVIDE
+
+   sourceVariable = MATH_VERTSPEED_FPM
+   sourceVariable = 100000
+}
+
+RPM_MATH_VARIABLE
+{
+   name = VERTSPEED_FPM_LOG10PART1
+   operator = DIVIDE
+
+   sourceVariable = MATH_VERTSPEED_FPM
+   sourceVariable = 100
+}
+
+RPM_MATH_VARIABLE
+{
+   name = VERTSPEED_FPM_LOG10PART2
+   operator = SUBTRACT
+
+   sourceVariable = MATH_VERTSPEED_FPM_DIV1000
+   sourceVariable = 1
+}
+
+RPM_MATH_VARIABLE
+{
+   name = VERTSPEED_FPM_LOG10PART3
+   operator = ADD
+
+   sourceVariable = MATH_VERTSPEED_FPM_DIV1000
+   sourceVariable = 1
+}
+
+RPM_MATH_VARIABLE
+{
+   name = VERTSPEED_FPM_LOG10PART4
+   operator = SUBTRACT
+
+   sourceVariable = MATH_VERTSPEED_FPM_DIV10000
+   sourceVariable = 2
+}
+
+RPM_MATH_VARIABLE
+{
+   name = VERTSPEED_FPM_LOG10PART5
+   operator = ADD
+
+   sourceVariable = MATH_VERTSPEED_FPM_DIV10000
+   sourceVariable = 2
+}
+
+
+RPM_MATH_VARIABLE
+{
+   name = VERTSPEED_FPM_LOG10PART4
+   operator = SUBTRACT
+
+   sourceVariable = MATH_VERTSPEED_FPM_DIV100000
+   sourceVariable = 3
+}
+
+RPM_MATH_VARIABLE
+{
+   name = VERTSPEED_FPM_LOG10PART5
+   operator = ADD
+
+   sourceVariable = MATH_VERTSPEED_FPM_DIV100000
+   sourceVariable = 3
+}
+
+RPM_MATH_VARIABLE
+{
+   name = RADARALTOCEAN_FEET
+   operator = MULTIPLY
+
+   sourceVariable = RADARALTOCEAN
+   sourceVariable = MetersToFeet
+}
+
+RPM_MATH_VARIABLE
+{
+   name = ALTITUDEBOTTOM_FEET
+   operator = MULTIPLY
+
+   sourceVariable = ALTITUDEBOTTOM
+   sourceVariable = MetersToFeet
+}
+
+RPM_MATH_VARIABLE
+{
+   name = Warbird_Autopilot_Alt_Feet
+   operator = MULTIPLY
+
+   sourceVariable = PERSISTENT_Warbird_Autopilot_AltInput
+   sourceVariable = MetersToFeet
+}
+
+RPM_MATH_VARIABLE
+{
+   name = WARBIRD_HSI_SELECTED_DME_FEET
+   operator = MULTIPLY
+
+   sourceVariable = SELECT_ASET_HSI_SELECTED_DME
+   sourceVariable = 1000
+   sourceVariable = MetersToFeet
+}
+
+RPM_MATH_VARIABLE
+{
+   name = WARBIRD_HSI_SELECTED_DME
+   operator = DIVIDE
+
+   sourceVariable = MATH_WARBIRD_HSI_SELECTED_DME_FEET
+   sourceVariable = 6076
+}
+
+RPM_MATH_VARIABLE
+{
+   name = VERTSPEED_FPM
+   operator = MULTIPLY
+
+   sourceVariable = VERTSPEED
+   sourceVariable = MetersPerSecondToFeetPerMinute
+}
+
+RPM_MATH_VARIABLE
+{
+   name = VERTSPEEDROUNDED_FPM
+   operator = MULTIPLY
+
+   sourceVariable = VERTSPEEDROUNDED
+   sourceVariable = MetersPerSecondToFeetPerMinute
+}
+
+RPM_MATH_VARIABLE
+{
+   name = VERTSPEEDROUNDED_FPM_THOUSANDS
+   operator = DIVIDE
+
+   sourceVariable = MATH_VERTSPEEDROUNDED_FPM
+   sourceVariable = 1000
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_HUD_ON
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = PERSISTENT_HUD_GLASSUP
+			range = 0.5, 1.5
+		}
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_ELECTRICAL_ON
+			range = 0.5, 1.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_GEARALARM_SLOW
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = GEAR
+			range = -0.5, 0.5
+		}
+		
+	SOURCE_VARIABLE
+		{
+			name = MATH_AIRSPEED_KNOTS
+			range = 0, 135
+		}
+		
+	SOURCE_VARIABLE
+		{
+			name = PERSISTENT_WARBIRD_GEARALARM_SILENCE
+			range = 0.5, 1.5
+		}
+		
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_ELECTRICAL_ON
+			range = 0.5, 1.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_GEARALARM_FAST
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = GEAR
+			range = 0.5, 1.5
+		}
+	  	 
+	SOURCE_VARIABLE
+		{
+			name = PERSISTENT_WARBIRD_GEARALARM_SILENCE
+			range = 0.5, 1.5
+		}
+		
+	SOURCE_VARIABLE
+		{
+			name = MATH_AIRSPEED_KNOTS
+			range = 170,10000
+		}
+		
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_ELECTRICAL_ON
+			range = 0.5, 1.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+	{
+	name = WARBIRD_GEARALARM_ON
+	operator = OR
+	
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_GEARALARM_SLOW
+			range = 0.5,1.5
+		}
+	
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_GEARALARM_FAST
+			range = 0.5,1.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+	{
+	name = WARBIRD_3GWARN
+	operator = OR
+	
+	SOURCE_VARIABLE
+		{
+			name = GFORCE 
+			range = -1.5, -100000
+		}
+	
+	SOURCE_VARIABLE
+		{
+			name = GFORCE
+			range = 3, 100000
+		}
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_3GWARN_ON
+	
+	    defaultValue = CUSTOM_WARBIRD_3GWARN
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_HSI_SELECTED_DME
+	
+	    defaultValue = MATH_WARBIRD_HSI_SELECTED_DME
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_ASET_HSI_SELECTED_DME
+	
+	    defaultValue = SELECT_ASET_HSI_SELECTED_DME
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_CUSTOM_VARIABLE
+	{
+	name = WARBIRD_6GWARN
+	operator = OR
+	
+	SOURCE_VARIABLE
+		{
+			name = GFORCE 
+			range = -1.5, -100000
+		}
+	
+	SOURCE_VARIABLE
+		{
+			name = GFORCE
+			range = 6, 100000
+		}
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_6GWARN_ON
+	
+	    defaultValue = CUSTOM_WARBIRD_6GWARN
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_GFORCE
+	
+	    defaultValue = GFORCE
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_HOTTESTENGINETEMP
+	
+	    defaultValue = HOTTESTENGINETEMP
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_EXTERNALTEMPERATURE
+	
+	    defaultValue = EXTERNALTEMPERATURE
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_EFFECTIVETHROTTLE
+	
+	    defaultValue = EFFECTIVETHROTTLE
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_THROTTLE
+	
+	    defaultValue = THROTTLE
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_LIQUIDFUELPERCENT
+	
+	    defaultValue = SYSR_LIQUIDFUELPERCENT
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_OXIDIZERPERCENT
+	
+	    defaultValue = SYSR_OXIDIZERPERCENT
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_LIQUIDFUEL
+	
+	    defaultValue = SYSR_LIQUIDFUEL
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_OXIDIZER
+	
+	    defaultValue = SYSR_OXIDIZER
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_ELECTRICCHARGE
+	
+	    defaultValue = SYSR_ELECTRICCHARGE
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = VERTSPEED_FPM
+	
+	    defaultValue = MATH_VERTSPEED_FPM
+
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }		
+		
+    VARIABLE_DEFINITION
+    {
+        name = ATMPRESSURE
+        range = 0, 0.0001
+
+        value = 0
+    }		
+		
+    VARIABLE_DEFINITION
+    {
+        name = PERSISTENT_WARBIRD_PITOT_ON
+        range = 0.5, 1.5
+
+        value = MATH_VERTSPEED_FPM
+    }
+	
+	VARIABLE_DEFINITION
+	{
+		name = SELECT_WARBIRD_PITOT_FREEZE
+		range = 0.5, 1.5
+		
+		value = 0
+	}
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = CAPSULE_VERTSPEED_FPM
+	
+	    defaultValue = MATH_VERTSPEED_FPM
+
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }		
+		
+    VARIABLE_DEFINITION
+    {
+        name = ATMPRESSURE
+        range = 0, 0.0001
+
+        value = 0
+    }		
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_VERTSPEED
+	
+	    defaultValue = VERTSPEED
+
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }		
+		
+    VARIABLE_DEFINITION
+    {
+        name = ATMPRESSURE
+        range = 0, 0.0001
+
+        value = 0
+    }		
+		
+    VARIABLE_DEFINITION
+    {
+        name = PERSISTENT_WARBIRD_PITOT_ON
+        range = 0.5, 1.5
+
+        value = VERTSPEED
+    }
+	
+	VARIABLE_DEFINITION
+	{
+		name = SELECT_WARBIRD_PITOT_FREEZE
+		range = 0.5, 1.5
+		
+		value = 0
+	}
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_VERTSPEEDLOG10
+	
+	    defaultValue = 0
+
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }		
+		
+    VARIABLE_DEFINITION
+    {
+        name = ATMPRESSURE
+        range = 0, 0.0001
+
+        value = 0
+    }
+
+    VARIABLE_DEFINITION
+    {
+        name = VERTSPEED
+        range = -9.999, 9.999
+
+        value = MATH_VERTSPEED_DIV10
+    }
+    VARIABLE_DEFINITION
+    {
+        name = VERTSPEED
+        range = 10, 1000000
+
+        value = MATH_WARBIRD_VERTSPEED_LOG10_SUBTRACTED
+    }	
+    VARIABLE_DEFINITION
+    {
+        name = VERTSPEED
+        range = -10, -1000000
+
+        value = MATH_WARBIRD_VERTSPEED_LOG10_ADDED
+    }		
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_VERTSPEED_FPM_FAKELOG10
+	
+	    defaultValue = 0
+
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }		
+		
+    VARIABLE_DEFINITION
+    {
+        name = ATMPRESSURE
+        range = 0, 0.0001
+
+        value = 0
+    }
+
+    VARIABLE_DEFINITION
+    {
+        name = VERTSPEED
+        range = -100, 100
+
+        value = MATH_VERTSPEED_FPM_LOG10PART1
+    }	
+    
+	VARIABLE_DEFINITION
+    {
+        name = VERTSPEED
+        range = -1000, -100.1
+
+        value = MATH_VERTSPEED_FPM_LOG10PART2
+    }
+	
+    VARIABLE_DEFINITION
+    {
+        name = VERTSPEED
+        range = 100.1, 1000
+
+        value = MATH_VERTSPEED_FPM_LOG10PART3
+    }
+	
+    VARIABLE_DEFINITION
+    {
+        name = VERTSPEED
+        range = -10000, -1000.1
+
+        value = MATH_VERTSPEED_FPM_LOG10PART4
+    }
+	
+    VARIABLE_DEFINITION
+    {
+        name = VERTSPEED
+        range = 1000.1, 10000
+
+        value = MATH_VERTSPEED_FPM_LOG10PART5
+    }
+	
+    VARIABLE_DEFINITION
+    {
+        name = VERTSPEED
+        range = -100000, -10000.1
+
+        value = MATH_VERTSPEED_FPM_LOG10PART6
+    }
+	
+    VARIABLE_DEFINITION
+    {
+        name = VERTSPEED
+        range = 10000.1, 100000
+
+        value = MATH_VERTSPEED_FPM_LOG10PART7
+    }		
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = IASPEED_KNOTS
+	
+	    defaultValue = MATH_AIRSPEED_KNOTS
+		
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }		
+		
+    VARIABLE_DEFINITION
+    {
+        name = DISTTOATMOSPHERETOP
+        range = -10000000000000000000000000000, 0.5
+
+        value = 0
+    }				
+
+    VARIABLE_DEFINITION
+    {
+        name = PERSISTENT_WARBIRD_PITOT_ON
+        range = 0.5, 1.5
+
+        value = MATH_AIRSPEED_KNOTS
+    }
+	
+	VARIABLE_DEFINITION
+	{
+		name = SELECT_WARBIRD_PITOT_FREEZE
+		range = 0.5, 1.5
+		
+		value = MATH_WARBIRD_AIRSPEED_KNOTS_PITOTFREEZE
+	}
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = IASPEED_MPH
+	
+	    defaultValue = MATH_AIRSPEED_MPH
+		
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }		
+		
+    VARIABLE_DEFINITION
+    {
+        name = DISTTOATMOSPHERETOP
+        range = -10000000000000000000000000000, 0.5
+
+        value = 0
+    }				
+
+    VARIABLE_DEFINITION
+    {
+        name = PERSISTENT_WARBIRD_PITOT_ON
+        range = 0.5, 1.5
+
+        value = MATH_AIRSPEED_KNOTS
+    }
+	
+	VARIABLE_DEFINITION
+	{
+		name = SELECT_WARBIRD_PITOT_FREEZE
+		range = 0.5, 1.5
+		
+		value = MATH_WARBIRD_AIRSPEED_MPH_PITOTFREEZE
+	}
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_ANALOGMACH
+	
+	    defaultValue = SURFSPEEDMACH
+		
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+	VARIABLE_DEFINITION
+    {
+        name = SURFSPEEDMACH
+        range = 5, 1000
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = IASPEED
+	
+	    defaultValue = IASPEED
+		
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }		
+		
+    VARIABLE_DEFINITION
+    {
+        name = DISTTOATMOSPHERETOP
+        range = -10000000000000000000000000000, 0.5
+
+        value = 0
+    }				
+
+    VARIABLE_DEFINITION
+    {
+        name = PERSISTENT_WARBIRD_PITOT_ON
+        range = 0.5, 1.5
+
+        value = IASPEED
+    }
+	
+	VARIABLE_DEFINITION
+	{
+		name = SELECT_WARBIRD_PITOT_FREEZE
+		range = 0.5, 1.5
+		
+		value = MATH_WARBIRD_SURFSPEED_METERS_PITOTFREEZE
+	}
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_SURFSPEED_KNOTS
+	
+	    defaultValue = MATH_SURFSPEED_KNOTS
+		
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }		
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_SURFSPEED
+	
+	    defaultValue = SURFSPEED
+		
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }		
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_RADARALTOCEAN_FEET
+	
+	    defaultValue = MATH_RADARALTOCEAN_FEET
+		
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }		
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_RADARALTOCEAN
+	
+	    defaultValue = RADARALTOCEAN
+		
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }		
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_IASPEED
+	
+	    defaultValue = IASPEED
+		
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }		
+		
+    VARIABLE_DEFINITION
+    {
+        name = DISTTOATMOSPHERETOP
+        range = -10000000000000000000000000000, 0.5
+
+        value = 0
+    }				
+
+    VARIABLE_DEFINITION
+    {
+        name = PERSISTENT_WARBIRD_PITOT_ON
+        range = 0.5, 1.5
+
+        value = IASPEED
+    }
+	
+	VARIABLE_DEFINITION
+	{
+		name = SELECT_WARBIRD_PITOT_FREEZE
+		range = 0.5, 1.5
+		
+		value = MATH_WARBIRD_SURFSPEED_METERS_PITOTFREEZE
+	}
+}
+
+RPM_MATH_VARIABLE
+{
+   name = WARBIRD_SURFSPEED_METERS_PITOTFREEZE
+   operator = ADD
+
+   sourceVariable = SURFSPEED
+   sourceVariable = SELECT_WARBIRD_IASPEED_PITOTFREEZE_VARIATION_SIGNED
+}
+
+RPM_MATH_VARIABLE
+{
+   name = WARBIRD_AIRSPEED_MPH_PITOTFREEZE
+   operator = ADD
+
+   sourceVariable = MATH_AIRSPEED_MPH
+   sourceVariable = SELECT_WARBIRD_IASPEED_PITOTFREEZE_VARIATION_SIGNED
+}
+
+RPM_MATH_VARIABLE
+{
+   name = WARBIRD_AIRSPEED_KNOTS_PITOTFREEZE
+   operator = ADD
+
+   sourceVariable = MATH_AIRSPEED_KNOTS
+   sourceVariable = SELECT_WARBIRD_IASPEED_PITOTFREEZE_VARIATION_SIGNED
+}
+
+RPM_MATH_VARIABLE
+{
+   name = WARBIRD_RANDOMVARIATION_MULT
+   operator = MULTIPLY
+
+   sourceVariable = MATH_WARBIRD_RANDOMVARIATION
+   sourceVariable = -1
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_IASPEED_PITOTFREEZE_VARIATION_SIGNED
+	
+	    defaultValue = SELECT_WARBIRD_IASPEED_PITOTFREEZE_VARIATION_CLIMBING
+
+    VARIABLE_DEFINITION
+    {
+        name = MATH_VERTSPEED_FPM
+        range = -0.01, -100000
+
+        value = SELECT_WARBIRD_IASPEED_PITOTFREEZE_VARIATION_DESCENDING
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_IASPEED_PITOTFREEZE_VARIATION_CLIMBING
+	
+	    defaultValue = MATH_WARBIRD_RANDOMVARIATION
+
+    VARIABLE_DEFINITION
+    {
+        name = MATH_WARBIRD_RANDOMVARIATION
+        range = -0.01, -100000
+
+        value = MATH_WARBIRD_RANDOMVARIATION_MULT
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_IASPEED_PITOTFREEZE_VARIATION_DESCENDING
+	
+	    defaultValue = MATH_WARBIRD_RANDOMVARIATION
+
+    VARIABLE_DEFINITION
+    {
+        name = MATH_WARBIRD_RANDOMVARIATION
+        range = 0.01, 100000
+
+        value = MATH_WARBIRD_RANDOMVARIATION_MULT
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = ALTITUDE_FEET
+	
+	    defaultValue = MATH_ALTITUDE_FEET
+
+	VARIABLE_DEFINITION
+	{
+		name = SELECT_WARBIRD_PITOT_FREEZE
+		range = 0.5, 1.5
+		
+		value = MATH_WARBIRD_ALTITUDE_FEET_PITOTFREEZE
+	}	
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_MATH_VARIABLE
+{
+   name = WARBIRD_ALTITUDE_FEET_PITOTFREEZE
+   operator = ADD
+
+   sourceVariable = MATH_ALTITUDE_FEET
+   sourceVariable = MATH_WARBIRD_RANDOMVARIATION
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRDRPM
+	
+	    defaultValue = MATH_WARBIRD_REAL_RPM
+
+	VARIABLE_DEFINITION
+    {
+        name = ACTIVEENGINECOUNT
+        range = -0.5, 0.5
+
+        value = 0
+    }
+//	VARIABLE_DEFINITION
+//    {
+//       name = PLUGIN_JSIInternalRPMButtons:ButtonEnableEnginesState
+//       range = -0.5, 0.5
+//
+//       value = 0
+//    }
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_MAPPED_VARIABLE
+{
+	sourceVariable = EFFECTIVETHROTTLE
+	sourceRange = 0, 1.57
+	mappedVariable = WARBIRD_THROTTLE_RPM
+	mappedRange = 910, 5000
+	
+}
+
+RPM_MATH_VARIABLE
+{
+  name = WARBIRD_REAL_RPM
+  operator = ADD
+
+  sourceVariable = MAPPED_WARBIRD_THROTTLE_RPM
+  sourceVariable = MATH_WARBIRD_RANDOMVARIATION
+}
+
+
+RPM_MATH_VARIABLE
+{
+  name = WARBIRD_RANDOMVARIATION
+  operator = MULTIPLY
+
+  sourceVariable = RANDOMNORMAL
+  sourceVariable = 4
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_ELECTRICAL_READY
+	operator = OR
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_BATTERYPOWER_ON
+			range = 0.5, 1.5
+		}
+		
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_ALTERNATOR_ON
+			range = 0.5, 1.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_ELECTRICAL_ON
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_ELECTRICAL_READY
+			range = 0.5, 1.5
+		}
+		
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_ALCOR_POWERON
+			range = 0.5, 1.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_COMMRADIOLEFTSELECT
+	operator = OR
+	SOURCE_VARIABLE
+		{
+			name = SELECT_WARBIRD_COMMRADIOSELECT
+			range = 0.5, 1.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_COMMRADIORIGHTSELECT
+	operator = OR
+	SOURCE_VARIABLE
+		{
+			name = SELECT_WARBIRD_COMMRADIOSELECT
+			range = -1.5, 0.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_NAV1RADIOLEFTSELECT
+	operator = OR
+	SOURCE_VARIABLE
+		{
+			name = PERSISTENT_WARBIRD_NAV1RADIOSELECT
+			range = 0.5, 1.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_NAV1RADIORIGHTSELECT
+	operator = OR
+	SOURCE_VARIABLE
+		{
+			name = PERSISTENT_WARBIRD_NAV1RADIOSELECT
+			range = -1.5, 0.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_NAV2RADIOLEFTSELECT
+	operator = OR
+	SOURCE_VARIABLE
+		{
+			name = PERSISTENT_WARBIRD_NAV2RADIOSELECT
+			range = 0.5, 1.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_NAV2RADIORIGHTSELECT
+	operator = OR
+	SOURCE_VARIABLE
+		{
+			name = PERSISTENT_WARBIRD_NAV2RADIOSELECT
+			range = -1.5, 0.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_ELECTRICAL_OFF
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_ELECTRICAL_ON
+			range = -0.5, 0.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_AUTOPILOT_ON
+	operator = AND
+	
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_ELECTRICAL_ON
+			range = 0.5, 1.5
+		}
+	
+	SOURCE_VARIABLE
+		{
+			name = PERSISTENT_WARBIRD_APSWITCH_ON
+			range = 0.5, 1.5
+		}	
+		
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_ALTERNATOR_ON
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = ELECOUTPUTALTERNATOR
+			range = 0.001, 1000000
+		}		
+	SOURCE_VARIABLE
+		{
+			name = PERSISTENT_WARBIRD_GENERATOR_ON
+			range = 0.5, 1.5
+		}
+	SOURCE_VARIABLE
+		{
+			name = SYSR_ELECTRICCHARGE
+			range = 0.1, 10000
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_BATTERYPOWER_ON
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = SYSR_ELECTRICCHARGE
+			range = 0.1, 10000
+		}
+		
+	SOURCE_VARIABLE
+		{
+			name = PERSISTENT_WARBIRD_BATTERY_ON
+			range = 0.5, 1.5
+		}
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_ENGINEOVERHEATALARM
+	
+	    defaultValue = CUSTOM_ALCOR_GEARS_ON 
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_FUELWARNING
+	
+	    defaultValue = CUSTOM_ALCOR_LOWFUEL_ON 
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_BRAKEWARNING
+	
+	    defaultValue = BRAKES
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_FUELFLOW
+	
+	    defaultValue = CURRENTENGINEFUELFLOW
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_OXIDIZERFLOW
+	
+	    defaultValue = SYSR_OXIDIZERDELTA
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_GEARS_DOWN
+	
+	    defaultValue = CUSTOM_ALCOR_GEARS_ON 
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_PITOT_FREEZE
+
+	    defaultValue = 0
+
+	VARIABLE_DEFINITION
+	{
+		name = EXTERNALTEMPERATUREKELVIN
+        range = 272.2, 10000
+
+        value = 0
+	}
+	
+	VARIABLE_DEFINITION
+	{
+		name = RANDOMNORMAL
+        range = -2,2
+
+        value = 1
+	}
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRDINTAKEAIR
+	
+	    defaultValue = CURRENTINTAKEAIRFLOW 
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+	VARIABLE_DEFINITION
+	{
+		name = ACTIVEENGINECOUNT
+		range = -0.5, 0.5
+		
+		value = 0
+	}
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_COMMRADIOSELECT
+	
+	    defaultValue = PERSISTENT_WARBIRD_COMMRADIOSELECT 
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+	VARIABLE_DEFINITION
+	{
+		name = PERSISTENT_ASET_COMM_RADIO_TURN_ON
+		range = -0.5, 0.5
+		
+		value = 0
+	}
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_NAV1RADIOSELECT
+	
+	    defaultValue = PERSISTENT_WARBIRD_NAV1RADIOSELECT
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+	VARIABLE_DEFINITION
+	{
+		name = PERSISTENT_ASET_NAV_1_RADIO_TURN_ON
+		range = -0.5, 0.5
+		
+		value = 0
+	}
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_NAV2RADIOSELECT
+	
+	    defaultValue = PERSISTENT_WARBIRD_NAV2RADIOSELECT
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+	VARIABLE_DEFINITION
+	{
+		name = PERSISTENT_ASET_NAV_2_RADIO_TURN_ON
+		range = -0.5, 0.5
+		
+		value = 0
+	}
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_COMM_RADIO_TURN_ON
+	
+	    defaultValue = PERSISTENT_ASET_COMM_RADIO_TURN_ON 
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_NAV_1_RADIO_TURN_ON
+	
+	    defaultValue = PERSISTENT_ASET_NAV_1_RADIO_TURN_ON
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_NAV_2_RADIO_TURN_ON
+	
+	    defaultValue = PERSISTENT_ASET_NAV_2_RADIO_TURN_ON
+
+    VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_MANIFOLDPRESSURE
+	
+	    defaultValue = MAPPED_WARBIRD_RAWMANIFOLDPRESSURE
+
+	VARIABLE_DEFINITION
+    {
+        name = ACTIVEENGINECOUNT
+        range = -0.5, 0.5
+
+        value = 0
+    }
+//	VARIABLE_DEFINITION
+//    {
+//       name = PLUGIN_JSIInternalRPMButtons:ButtonEnableEnginesState
+//        range = -0.5, 0.5
+//
+//       value = 0
+//    }
+	VARIABLE_DEFINITION
+    {
+        name = CUSTOM_WARBIRD_ELECTRICAL_ON
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_MAPPED_VARIABLE
+{
+	sourceVariable = THROTTLE
+	sourceRange = 0, 1.8
+	mappedVariable = WARBIRD_RAWMANIFOLDPRESSURE
+	mappedRange = 10, 60
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_ENGINESTART_READY
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_ELECTRICAL_ON
+			range = 0.5, 1.5
+		}
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIInternalRPMButtons:ButtonStageLockState
+			range = -0.5, 0.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_COMM_RADIO_LEFT_LIGHT
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_ASET_COMM_RADIO_ATC_ONLINE
+			range = 0.5, 1.5
+		}
+		
+	SOURCE_VARIABLE
+		{
+			name = SELECT_WARBIRD_COMMRADIOSELECT
+			range = 0.5, 1.1
+		}
+	
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_COMM_RADIO_RIGHT_LIGHT
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_ASET_COMM_RADIO_ATC_ONLINE
+			range = 0.5, 1.5
+		}
+		
+	SOURCE_VARIABLE
+		{
+			name = SELECT_WARBIRD_COMMRADIOSELECT
+			range = -1.1,-0.5
+		}
+	
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_COMM_RADIO_SIMPLE_LIGHT
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_ASET_COMM_RADIO_ATC_ONLINE
+			range = 0.5, 1.5
+		}
+		
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_ELECTRICAL_ON
+			range = 0.5, 1.5
+		}
+	
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_NAV1_RADIO_LEFT_LIGHT
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_ASET_NAV_1_DME_ON
+			range = 0.5, 1.5
+		}
+		
+	SOURCE_VARIABLE
+		{
+			name = PERSISTENT_WARBIRD_NAV1RADIOSELECT
+			range = 0.5,1.1
+		}
+	
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_NAV1_RADIO_SIMPLE_LIGHT
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_ASET_NAV_1_DME_ON
+			range = 0.5, 1.5
+		}
+		
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_ELECTRICAL_ON
+			range = 0.5,1.1
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_NAV1_RADIO_RIGHT_LIGHT
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_ASET_NAV_1_DME_ON
+			range = 0.5, 1.5
+		}
+		
+	SOURCE_VARIABLE
+		{
+			name = PERSISTENT_WARBIRD_NAV1RADIOSELECT
+			range = -1.1,-0.5
+		}
+	
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_NAV2_RADIO_LEFT_LIGHT
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_ASET_NAV_2_DME_ON
+			range = 0.5, 1.5
+		}
+		
+	SOURCE_VARIABLE
+		{
+			name = PERSISTENT_WARBIRD_NAV2RADIOSELECT
+			range = 0.5,1.1
+		}
+	
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_NAV2_RADIO_RIGHT_LIGHT
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_ASET_NAV_2_DME_ON
+			range = 0.5, 1.5
+		}
+		
+	SOURCE_VARIABLE
+		{
+			name = PERSISTENT_WARBIRD_NAV2RADIOSELECT
+			range = -1.1,-0.5
+		}
+	
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_APPAUSE_ON
+	operator = OR
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_AUTOPILOT_ON
+			range = -0.5, 0.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+
+	{
+	  name = WARBIRD_NI_RADARALTIMETER_ALARM_ON
+	  operator = AND
+	  
+	  SOURCE_VARIABLE
+	  {
+		name = ORBITMAKESSENSE  
+		range = 0.5,1.5
+	  }
+
+	  SOURCE_VARIABLE
+	  {
+		name = VERTSPEEDROUNDED 
+		range = -10000, -0.1
+	  }
+	  SOURCE_VARIABLE
+	  {
+		name = CUSTOM_WARBIRD_ELECTRICAL_OFF
+		range = -0.1, 0.1
+	  }
+	  SOURCE_VARIABLE
+	  {
+		name = MATH_ALTITUDEBOTTOM_FEET
+		range = 1, PERSISTENT_WARBIRD_RADARALTIMETER_ALT_WARN
+	  }
+	}
+	
+RPM_CUSTOM_VARIABLE
+
+	{
+	  name = WARBIRD_ASET_NI_RADARALTIMETER_ALARM_ON
+	  operator = AND
+	  
+	  SOURCE_VARIABLE
+	  {
+		name = ORBITMAKESSENSE  
+		range = 0.5,1.5
+	  }
+
+	  SOURCE_VARIABLE
+	  {
+		name = VERTSPEEDROUNDED 
+		range = -10000, -0.1
+	  }
+	  SOURCE_VARIABLE
+	  {
+		name = CUSTOM_WARBIRD_ELECTRICAL_OFF
+		range = -0.1, 0.1
+	  }
+	  SOURCE_VARIABLE
+	  {
+		name = ALTITUDEBOTTOM
+		range = 1, PERSISTENT_ASET_RADARALTIMETER_ALT_WARN
+	  }
+	}
+
+RPM_SELECT_VARIABLE
+{
+	name = THIS_EXISTS
+	
+	    defaultValue = 1
+
+    VARIABLE_DEFINITION
+    {
+        name = ALTITUDE
+        range = -0.5, 0.5
+
+        value = 1
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_ZERO
+	
+	    defaultValue = 0
+
+    VARIABLE_DEFINITION
+    {
+        name = ALTITUDE
+        range = -0.5, 0.5
+
+        value = 0
+    }
+}
+
+RPM_SELECT_VARIABLE
+{
+	name = WARBIRD_NEGONE
+	
+	    defaultValue = -1
+
+    VARIABLE_DEFINITION
+    {
+        name = ALTITUDE
+        range = -0.5, 0.5
+
+        value = -1
+    }
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_ALTHOLD_ON
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_AUTOPILOT_ON
+			range = 0.5, 1.5
+		}
+	
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetVertActive
+			range = 0.5, 1.5
+		}
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetVertMode
+			range = 1.5, 2.5
+		}
+}
+
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_PITCHHOLD_ON
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_AUTOPILOT_ON
+			range = 0.5, 1.5
+		}
+	
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetVertActive
+			range = 0.5, 1.5
+		}
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetVertMode
+			range = -0.5, 0.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_BANKHOLD_ON
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_AUTOPILOT_ON
+			range = 0.5, 1.5
+		}
+	
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetHorzActive
+			range = 0.5, 1.5
+		}
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetHorzMode
+			range = -0.5, 0.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_HEADINGHOLD_ON
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_AUTOPILOT_ON
+			range = 0.5, 1.5
+		}
+	
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetHorzActive
+			range = 0.5, 1.5
+		}
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetHorzMode
+			range = 1.5, 2.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_MACHHOLD_ON
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_AUTOPILOT_ON
+			range = 0.5, 1.5
+		}
+	
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetThrottleActive
+			range = 0.5, 1.5
+		}
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetThrottleMode
+			range = 1.5, 2.5  //hold groundspeed
+		}
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetSpeedRef
+			range = 2.5, 3.5  //Mach Number
+		}
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetSpeedUnits
+			range = 3.5, 4.5  //Mach Number
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_KEASHOLD_ON
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_AUTOPILOT_ON
+			range = 0.5, 1.5
+		}
+	
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetThrottleActive
+			range = 0.5, 1.5
+		}
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetThrottleMode
+			range = 1.5, 2.5  //hold groundspeed
+		}
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetSpeedRef
+			range = 1.5, 2.5  //Effective Speed
+		}
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetSpeedUnits
+			range = 2.5, 3.5  //Knots
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_MSEASHOLD_ON
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_AUTOPILOT_ON
+			range = 0.5, 1.5
+		}
+	
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetThrottleActive
+			range = 0.5, 1.5
+		}
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetThrottleMode
+			range = 1.5, 2.5  //hold groundspeed
+		}
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetSpeedRef
+			range = 1.5, 2.5  //Effective Speed
+		}
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetSpeedUnits
+			range = -0.5, 0.5  //m/s
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_MSHOLD_ON
+	operator = AND
+	SOURCE_VARIABLE
+		{
+			name = CUSTOM_WARBIRD_AUTOPILOT_ON
+			range = 0.5, 1.5
+		}
+	
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetThrottleActive
+			range = 0.5, 1.5
+		}
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetThrottleMode
+			range = 1.5, 2.5  //hold groundspeed
+		}
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetSpeedRef
+			range = 1.5, 2.5  //Effective Speed
+		}
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetSpeedUnits
+			range = -0.5, 0.5  //m/s
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_ALTHOLD_SET
+	operator = OR
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetVertMode
+			range = 1.5, 2.5
+		}
+}
+
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_PITCHHOLD_SET
+	operator = OR
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetVertMode
+			range = -0.5, 0.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_BANKHOLD_SET
+	operator = OR
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetHorzMode
+			range = -0.5, 0.5
+		}
+}
+
+RPM_CUSTOM_VARIABLE
+{
+	name = WARBIRD_HEADINGHOLD_SET
+	operator = OR
+
+	SOURCE_VARIABLE
+		{
+			name = PLUGIN_JSIPilotAssistant:GetHorzMode
+			range = 1.5, 2.5
+		}
+}
+
+	RPM_SELECT_VARIABLE
+	{
+		name = WARBIRD_DME_SURFSPEED
+
+		defaultValue = MATH_SURFSPEED_KNOTS
+
+		VARIABLE_DEFINITION
+		{
+			name = CUSTOM_ASET_NO_DME_DATA
+			range = 0.5,1.1
+
+			value = -1
+		}		
+		
+		VARIABLE_DEFINITION
+		{
+			name = PERSISTENT_DME_SOURCE_MODE
+			range = 0.5,1.1
+
+			value = MATH_WARBIRD_NAV_2_DME_READOUT
+		}
+		VARIABLE_DEFINITION
+		{
+			name = MATH_SURFSPEED_KNOTS
+			range = 999,1000000000
+
+			value = 999
+		}
+		VARIABLE_DEFINITION
+		{
+			name = MATH_SURFSPEED_KNOTS 
+			range = 0,0.1
+
+			value = -1
+		}
+	}	
+	
+	RPM_SELECT_VARIABLE
+	{
+		name = WARBIRD_DME_SURFSPEED_SI
+
+		defaultValue = SURFSPEED
+
+		VARIABLE_DEFINITION
+		{
+			name = CUSTOM_ASET_NO_DME_DATA
+			range = 0.5,1.1
+
+			value = -1
+		}		
+		
+		VARIABLE_DEFINITION
+		{
+			name = PERSISTENT_DME_SOURCE_MODE
+			range = 0.5,1.1
+
+			value = MATH_WARBIRD_NAV_2_DME_READOUT
+		}
+		VARIABLE_DEFINITION
+		{
+			name = SURFSPEED
+			range = 999,1000000000
+
+			value = 999
+		}
+		VARIABLE_DEFINITION
+		{
+			name = SURFSPEED 
+			range = 0,0.1
+
+			value = -1
+		}
+	}	
+	
+RPM_SELECT_VARIABLE
+	{
+		name = WARBIRD_GA_DME_DISTANCE
+
+		defaultValue = MATH_WARBIRD_NAV_1_DME_READOUT
+		
+		VARIABLE_DEFINITION
+		{
+			name = PERSISTENT_DME_SOURCE_MODE
+			range = -0.5,0.5
+
+			value = MATH_WARBIRD_NAV_2_DME_READOUT
+		}
+	}
+
+RPM_MATH_VARIABLE
+{
+	name = WARBIRD_NAV1_RADIO_LEFT_FREQ
+	operator = ADD
+	
+	sourceVariable = PERSISTENT_WARBIRD_NAV1_RADIO_LEFT_FREQ_ONES
+	sourceVariable = PERSISTENT_WARBIRD_NAV1_RADIO_LEFT_FREQ_HUNDREDTHS
+}
+
+RPM_MATH_VARIABLE
+{
+	name = WARBIRD_NAV1_RADIO_LEFT_FREQ_DISPLAY
+	operator = MULTIPLY
+	
+	sourceVariable = MATH_WARBIRD_NAV1_RADIO_LEFT_FREQ
+	sourceVariable = 0.01
+}
+
+RPM_MATH_VARIABLE
+{
+	name = WARBIRD_NAV1_RADIO_RIGHT_FREQ
+	operator = ADD
+	
+	sourceVariable = PERSISTENT_WARBIRD_NAV1_RADIO_RIGHT_FREQ_ONES
+	sourceVariable = PERSISTENT_WARBIRD_NAV1_RADIO_RIGHT_FREQ_HUNDREDTHS
+}
+
+RPM_MATH_VARIABLE
+{
+	name = WARBIRD_NAV1_RADIO_RIGHT_FREQ_DISPLAY
+	operator = MULTIPLY
+	
+	sourceVariable = MATH_WARBIRD_NAV1_RADIO_RIGHT_FREQ
+	sourceVariable = 0.01
+}
+
+RPM_MATH_VARIABLE
+{
+	name = WARBIRD_NAV2_RADIO_LEFT_FREQ
+	operator = ADD
+	
+	sourceVariable = PERSISTENT_WARBIRD_NAV2_RADIO_LEFT_FREQ_ONES
+	sourceVariable = PERSISTENT_WARBIRD_NAV2_RADIO_LEFT_FREQ_HUNDREDTHS
+}
+
+RPM_MATH_VARIABLE
+{
+	name = WARBIRD_NAV2_RADIO_LEFT_FREQ_DISPLAY
+	operator = MULTIPLY
+	
+	sourceVariable = MATH_WARBIRD_NAV2_RADIO_LEFT_FREQ
+	sourceVariable = 0.01
+}
+
+RPM_MATH_VARIABLE
+{
+	name = WARBIRD_NAV2_RADIO_RIGHT_FREQ
+	operator = ADD
+	
+	sourceVariable = PERSISTENT_WARBIRD_NAV2_RADIO_RIGHT_FREQ_ONES
+	sourceVariable = PERSISTENT_WARBIRD_NAV2_RADIO_RIGHT_FREQ_HUNDREDTHS
+}
+
+RPM_MATH_VARIABLE
+{
+	name = WARBIRD_NAV2_RADIO_RIGHT_FREQ_DISPLAY
+	operator = MULTIPLY
+	
+	sourceVariable = MATH_WARBIRD_NAV2_RADIO_RIGHT_FREQ
+	sourceVariable = 0.01
+}
+
+RPM_MATH_VARIABLE
+{
+	name = WARBIRD_COMM_RADIO_LEFT_FREQ
+	operator = ADD
+	
+	sourceVariable = PERSISTENT_WARBIRD_COMM_RADIO_LEFT_FREQ_ONES
+	sourceVariable = PERSISTENT_WARBIRD_COMM_RADIO_LEFT_FREQ_HUNDREDTHS
+}
+
+RPM_MATH_VARIABLE
+{
+	name = WARBIRD_COMM_RADIO_RIGHT_FREQ
+	operator = ADD
+	
+	sourceVariable = PERSISTENT_WARBIRD_COMM_RADIO_RIGHT_FREQ_ONES
+	sourceVariable = PERSISTENT_WARBIRD_COMM_RADIO_RIGHT_FREQ_HUNDREDTHS
+}
+
+RPM_MATH_VARIABLE
+{
+	name = WARBIRD_NAV_1_DME_FEET
+	operator = MULTIPLY
+	
+	sourceVariable = MATH_ASET_NAV_1_DME_READOUT
+	sourceVariable = MetersToFeet
+	sourceVariable = 1000
+
+}
+
+RPM_MATH_VARIABLE
+{
+	name = WARBIRD_NAV_1_DME_READOUT
+	operator = DIVIDE
+	
+	sourceVariable = MATH_WARBIRD_NAV_1_DME_FEET
+	sourceVariable = 6076
+}
+
+RPM_MATH_VARIABLE
+{
+	name = WARBIRD_NAV_2_DME_FEET
+	operator = MULTIPLY
+	
+	sourceVariable = MATH_ASET_NAV_2_DME_READOUT
+	sourceVariable = MetersToFeet
+	sourceVariable = 1000
+
+}
+
+RPM_MATH_VARIABLE
+{
+	name = WARBIRD_NAV_2_DME_READOUT
+	operator = DIVIDE
+	
+	sourceVariable = MATH_WARBIRD_NAV_2_DME_FEET
+	sourceVariable = 6076
+}
+

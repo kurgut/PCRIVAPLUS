@@ -1,0 +1,15 @@
+[hw][#00FF0088] BODY:[#00FF00BB]{0}                                   		$&$ ORBITBODY 
+[hw][#00FF0088] VEL:[#00FF00BB]{0:SIP_6.1}m/s  		                                                 	$&$ORBTSPEED 
+[hw][#00FF0088] ALT:[#00FF00BB]{0:SIP_6.3}m    		                                                 	$&$ ALTITUDE 
+[hw]{1:"";"                                                                                   ";""}[#{2:"00FF00DD";"00000000";"00000000"}]«««««««««««¬[@x-98][#00FF0088] ApA:[#00FF0088]{0:SIP_6.1}m     	   	$&$APOAPSIS  ORBITMAKESSENSE  NEXTAPSISTYPE
+[hw]{1:"";"                                                                                   ";""}[#{2:"00000000";"00FF00DD";"00000000"}]«««««««««««¬[@x-98][#00FF0088] PeA:[#00FF0088]{0:SIP_6.1}m     		$&$PERIAPSIS  ORBITMAKESSENSE NEXTAPSISTYPE
+[hw]{1:"";"                                                                                   ";""}[#00FF0088] INC:[#00FF0088]{0,7:0.000}°     		$&$INCLINATION ORBITMAKESSENSE 
+[hw]{1:"";"                                                                                   ";""}[#00FF0088] ECC:[#00FF0088]{0,7:0.000}      		$&$ECCENTRICITY ORBITMAKESSENSE 
+
+
+
+
+[hw]{3:"";"                                                                                ";""} [#00FF0088]              NodeT:[#{0:"FF000088";"00FF0088";"00FF00BB"}]{0:MET+dd:hh:mm:ss.f}[#00FF0088] ΔV:[#00FF00BB]{1,8:0.00}[#00FF0088] BurnT:[#81BEF788]{4:METhh:mm:ss.f} $&$ MNODETIMESECS  MNODEDV THROTTLE MNODEEXISTS MNODEBURNTIMESECS 
+
+[hw]{1:"";"                                                                                ";""}[#00FF0077] ApT: [#{3:"00FF00DD";"00000000";"00000000"}]ª«««««««««««««¬[@x-128] [#00FF0088]{0:MET-dd:hh:mm:ss.f}     		                                [#00FF0088]AN:[#{4:"00FF00DD";"00000000";"00000000"}]ª«««««««««««««¬[@x-248][#00FF00BB]{2:MET-dd:hh:mm:ss.f}        $&$TIMETOAPSECS  ORBITMAKESSENSE TIMETOANEQUATORIAL NEXTAPSISTYPE CUSTOM_ALCOR_NEXT_AN
+[hw]{1:"";"                                                                                ";""}[#00FF0077] PeT: [#{4:"00000000";"00FF00DD";"00000000"}]ª«««««««««««««¬[@x-128] [#00FF0088]{0:MET-dd:hh:mm:ss.f} [#00FF0077]          OP: [#00FF0088]{3:MET-dd:hh:mm:ss.f}          [#00FF0088]DN:[#{5:"00FF00DD";"00000000";"00000000"}]ª«««««««««««««¬[@x-248][#00FF00BB]{2:MET-dd:hh:mm:ss.f}   		$&$TIMETOPESECS  ORBITMAKESSENSE TIMETODNEQUATORIAL ORBPERIODSECS NEXTAPSISTYPE CUSTOM_ALCOR_NEXT_DN
