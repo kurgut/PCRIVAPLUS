@@ -1,0 +1,71 @@
+RPM_CUSTOM_VARIABLE
+
+	{
+	  name = ASET_CRT_SCREEN_ON_WB
+	  operator = AND
+
+	  SOURCE_VARIABLE
+	  {
+		name = PERSISTENT_ASET_CRT_PRW_ON
+		range = 0.1, 1.1
+	  }
+	  SOURCE_VARIABLE
+	  {
+		name = CUSTOM_WARBIRD_ELECTRICAL_OFF
+		range = -0.1, 0.1
+	  }
+	}
+	
+	RPM_CUSTOM_VARIABLE
+
+	{
+	  name = WARBIRD_PILOT_CRT_SCREEN_ON
+	  operator = AND
+
+	  SOURCE_VARIABLE
+	  {
+		name = PERSISTENT_WARBIRD_PILOT_CRT_PRW_ON
+		range = 0.1, 1.1
+	  }
+	  SOURCE_VARIABLE
+	  {
+		name = CUSTOM_WARBIRD_ELECTRICAL_OFF
+		range = -0.1, 0.1
+	  }
+	}
+
+	RPM_CUSTOM_VARIABLE
+
+	{
+	  name = WARBIRD_COPILOT_CRT_SCREEN_ON
+	  operator = AND
+
+	  SOURCE_VARIABLE
+	  {
+		name = PERSISTENT_WARBIRD_COPILOT_CRT_PRW_ON
+		range = 0.1, 1.1
+	  }
+	  SOURCE_VARIABLE
+	  {
+		name = CUSTOM_WARBIRD_ELECTRICAL_OFF
+		range = -0.1, 0.1
+	  }
+	}
+
+	RPM_CUSTOM_VARIABLE
+
+	{
+	  name = WARBIRD_NAV_CRT_SCREEN_ON
+	  operator = AND
+
+	  SOURCE_VARIABLE
+	  {
+		name = PERSISTENT_WARBIRD_NAV_CRT_PRW_ON
+		range = 0.1, 1.1
+	  }
+	  SOURCE_VARIABLE
+	  {
+		name = CUSTOM_WARBIRD_ELECTRICAL_OFF
+		range = -0.1, 0.1
+	  }
+	}
